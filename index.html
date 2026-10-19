@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Sınav Çalışma ve Konu Anlatım Rehberi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #e67e22;
+        }
+        code, pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+        .aciklama {
+            background: #eaf2f8;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #ecf0f1;
+        }
+        
+        /* Özel CSS Sınıfları (Div Örnekleri İçin) */
+        .kirmizi-kutu {
+            width: 200px;
+            height: 100px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .mavi-kutu {
+            width: 300px;
+            height: 120px;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #2980b9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML5 Sınav Çalışma ve Konu Anlatım Rehberi</h1>
+        <p>Tüm konular, açıklamalar, detaylar ve div/stil örnekleri tek sayfada!</p>
+    </header>
+
+    <!-- BÖLÜM 1 -->
+    <section>
+        <h2>1. HTML5 Belge Yapısı ve Temel Etiketler</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> HTML, web sayfasının iskeletini oluşturan işaretleme dilidir. Tarayıcıya belgenin yapısını bildirir[cite: 1].
+        </div>
+        <ul>
+            <li><code>&lt;!DOCTYPE html&gt;</code>: Tarayıcıya belgenin en güncel HTML5 standardında olduğunu söyler[cite: 1].</li>
+            <li><code>&lt;html&gt;</code>: Bütün kodları kapsayan ana kök etiketidir[cite: 1]. (<code>lang="tr"</code> Türkçe dil desteği belirtir.)</li>
+            <li><code>&lt;head&gt;</code>: Sayfanın arka plan ayarlarını, başlığını ve stil bağlantılarını tutar. Ekranda görünmez[cite: 1].</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code>: Türkçe karakterlerin düzgün görünmesini sağlar[cite: 1].</li>
+            <li><code>&lt;title&gt;</code>: Tarayıcı sekmesinde yazan başlığı belirler[cite: 1].</li>
+            <li><code>&lt;style&gt; / &lt;link&gt;</code>: Sayfaya tasarım (CSS) eklemek için kullanılır[cite: 1].</li>
+            <li><code>&lt;script&gt;</code>: JavaScript dosyalarını veya kodlarını bağlar[cite: 1].</li>
+            <li><code>&lt;!-- Yorum --&gt;</code>: Kod içine not düşmek içindir, tarayıcıda görünmez[cite: 1].</li>
+            <li><code>&lt;body&gt;</code>: Kullanıcının ekranda gördüğü tüm içerik buraya yazılır[cite: 1].</li>
+        </ul>
+        <h3>Örnek Belge İskeleti:</h3>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="tr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Örnek Sayfa&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Merhaba Dünya&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    </section>
+
+    <!-- BÖLÜM 2 -->
+    <section>
+        <h2>2. Başlıklar ve Metin Biçimlendirme Etiketleri</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> Metinleri düzenlemek, başlık hiyerarşisi kurmak ve önemli kısımları vurgulamak için kullanılır[cite: 1, 2].
+        </div>
+        <ul>
+            <li><code>&lt;h1&gt; - &lt;h6&gt;</code>: Başlık etiketleridir. <code>&lt;h1&gt;</code> en büyük ve en önemlidir, <code>&lt;h6&gt;</code> en küçüktür[cite: 1].</li>
+            <li><code>&lt;p&gt;</code>: Paragraf oluşturur[cite: 2].</li>
+            <li><code>&lt;strong&gt; / &lt;b&gt;</code>: Metni kalın yapar (<code>strong</code> anlamsal önem katar)[cite: 2].</li>
+            <li><code>&lt;em&gt; / &lt;i&gt;</code>: Metni eğik / italik yapar[cite: 2].</li>
+            <li><code>&lt;u&gt; / &lt;ins&gt;</code>: Metnin altını çizer[cite: 2].</li>
+            <li><code>&lt;small&gt;</code>: Metni küçük yazı tipiyle yazar[cite: 2].</li>
+            <li><code>&lt;del&gt;</code>: Metnin üstünü çizer (eski fiyat vb. için)[cite: 2].</li>
+            <li><code>&lt;sup&gt; / &lt;sub&gt;</code>: Üst simge (X<sup>2</sup>) ve alt simge (H<sub>2</sub>O) oluşturur[cite: 2].</li>
+            <li><code>&lt;pre&gt;</code>: Kod içinde bırakılan boşlukları ve alt satırları aynen ekrana yansıtır[cite: 2].</li>
+        </ul>
+        <h3>Örnek Kod:</h3>
+<pre>
+&lt;h1&gt;Ana Başlık&lt;/h1&gt;
+&lt;p&gt;Bu bir &lt;strong&gt;önemli&lt;/strong&gt; paragraftır. Fiyat &lt;del&gt;100 TL&lt;/del&gt; yerine &lt;ins&gt;80 TL&lt;/ins&gt;!&lt;/p&gt;
+&lt;p&gt;Kimyasal Formül: H&lt;sub&gt;2&lt;/sub&gt;O | Üslü Sayı: X&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+</pre>
+    </section>
+
+    <!-- BÖLÜM 3 -->
+    <section>
+        <h2>3. Listeleme Etiketleri</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> Verileri maddeler halinde düzenli göstermek için kullanılır[cite: 2].
+        </div>
+        <ul>
+            <li><code>&lt;ol&gt;</code>: Sıralı (numaralı/harfli) listedir. <code>type="A"</code>, <code>type="1"</code> gibi özellikleri vardır[cite: 2].</li>
+            <li><code>&lt;ul&gt;</code>: Sırasız (madde işaretli) listedir. <code>type="square"</code>, <code>type="circle"</code> alabilir[cite: 2].</li>
+            <li><code>&lt;li&gt;</code>: Liste elemanıdır (Her iki liste türünde de maddeyi belirtir)[cite: 2].</li>
+            <li><code>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</code>: Tanım listesidir. <code>&lt;dt&gt;</code> terimi, <code>&lt;dd&gt;</code> ise açıklamasını yazar[cite: 2].</li>
+        </ul>
+        <h3>Örnek Kod:</h3>
+<pre>
+&lt;ol type="A"&gt;
+    &lt;li&gt;Birinci Madde&lt;/li&gt;
+    &lt;li&gt;İkinci Madde&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul type="square"&gt;
+    &lt;li&gt;Elma&lt;/li&gt;
+    &lt;li&gt;Armut&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    </section>
+
+    <!-- BÖLÜM 4 -->
+    <section>
+        <h2>4. Tablolar ve Hücre Birleştirme</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> Verileri satır ve sütun matrisleri halinde sunmaktır[cite: 2]. Sınavlarda en çok sorulan yerlerden biridir[cite: 2].
+        </div>
+        <ul>
+            <li><code>&lt;table border="1"&gt;</code>: Tabloyu başlatır ve çerçeve ekler[cite: 2].</li>
+            <li><code>&lt;tr&gt;</code>: Tablo satırı oluşturur (Table Row)[cite: 2].</li>
+            <li><code>&lt;th&gt;</code>: Başlık hücresi oluşturur (Yazıyı koyu ve ortalı yapar)[cite: 2].</li>
+            <li><code>&lt;td&gt;</code>: Normal veri hücresi oluşturur (Table Data)[cite: 2].</li>
+            <li><code>colspan="N"</code>: Yan yana N adet sütunu birleştirir[cite: 2].</li>
+            <li><code>rowspan="N"</code>: Alt alta N adet satırı birleştirir[cite: 2].</li>
+        </ul>
+        <h3>Örnek Tablo Kodu:</h3>
+<pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Ad&lt;/th&gt;
+        &lt;th&gt;Not&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Ahmet&lt;/td&gt;
+        &lt;td&gt;90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2"&gt;Ortalama Tamamlandı&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+    </section>
+
+    <!-- BÖLÜM 5: DIV, PİKSEL AYARLARI VE YERLEŞİM ELEMANLARI -->
+    <section>
+        <h2>5. Div Etiketi, Piksel (px) Boyutlandırma ve Yerleşim Elemanları</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> <code>&lt;div&gt;</code>, içerikleri gruplamak, kutulamak ve sayfa düzenini kurmak için kullanılan en temel blok elemanıdır[cite: 2]. Satırın tamamını kaplar (Block-level)[cite: 2].
+        </div>
+        
+        <h3>Piksel (px) ve Stil Parametreleri:</h3>
+        <ul>
+            <li><code>width: 200px;</code> : Kutunun genişliğini ayarlar.</li>
+            <li><code>height: 100px;</code> : Kutunun yüksekliğini ayarlar.</li>
+            <li><code>background-color: red;</code> : Kutunun arka plan rengini belirler.</li>
+            <li><code>padding: 10px;</code> : Kutunun <strong>içindeki yazı ile kenarları arasındaki</strong> boşluğu belirler.</li>
+            <li><code>margin: 15px;</code> : Kutunun <strong>dışındaki elemanlarla arasındaki</strong> mesafeyi belirler.</li>
+            <li><code>border: 2px solid black;</code> : Kutuya çerçeve ekler.</li>
+        </ul>
+
+        <h3>A) Satır İçi (Inline) Style ile Div Kullanımı:</h3>
+<pre>
+&lt;div style="width: 300px; height: 150px; background-color: lightgreen; padding: 15px; border: 1px solid green;"&gt;
+    Bu div satır içi stil ile 300px genişlik ve 150px yükseklik almıştır.
+&lt;/div&gt;
+</pre>
+        <!-- Canlı Çalışan Örnek -->
+        <div style="width: 300px; height: 100px; background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px;">
+            <strong>Canlı Görünüm:</strong> Satır içi (inline style) tanımlanmış 300x100px yeşil kutu.
+        </div>
+
+        <h3>B) CSS Sınıfı (Class) ve ID ile Div Kullanımı:</h3>
+<pre>
+&lt;!-- HEAD İçindeki Stil Tanımı --&gt;
+&lt;style&gt;
+    .kirmizi-kutu {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        color: white;
+    }
+&lt;/style&gt;
+
+&lt;!-- BODY İçindeki Kullanımı --&gt;
+&lt;div class="kirmizi-kutu"&gt;Kırmızı Kutu&lt;/div&gt;
+</pre>
+        <!-- Canlı Çalışan Örnekler -->
+        <div class="kirmizi-kutu">
+            <strong>Canlı Görünüm:</strong> Class ile tanımlanmış Kırmızı Kutu (200x100px)
+        </div>
+        <div class="mavi-kutu">
+            <strong>Canlı Görünüm:</strong> Class ile tanımlanmış Mavi Kutu (300x120px)
+        </div>
+
+        <h3>HTML5 Anlamsal (Semantic) Düzen Etiketleri:</h3>
+        <ul>
+            <li><code>&lt;header&gt;</code>: Sayfa veya bölüm üst bilgi alanı[cite: 2].</li>
+            <li><code>&lt;nav&gt;</code>: Menü ve navigasyon bağlantıları[cite: 2].</li>
+            <li><code>&lt;section&gt;</code>: Sayfadaki ana içerik bölümleri[cite: 2].</li>
+            <li><code>&lt;article&gt;</code>: Bağımsız makale, blog veya haber içeriği[cite: 2].</li>
+            <li><code>&lt;aside&gt;</code>: Yan menü, reklam veya ikincil içerik alanı[cite: 2].</li>
+            <li><code>&lt;footer&gt;</code>: Sayfa alt bilgi (telif hakkı, iletişim) alanı[cite: 2].</li>
+            <li><code>&lt;figure&gt; &amp; &lt;figcaption&gt;</code>: Görseli ve alt açıklamasını bir arada gruplar[cite: 2].</li>
+            <li><code>&lt;span&gt;</code>: Satır içi (inline) elemandır; sadece içerdiği metin kadar yer kaplar[cite: 2].</li>
+        </ul>
+    </section>
+
+    <!-- BÖLÜM 6 -->
+    <section>
+        <h2>6. Medya Elemanları (Resim ve Video)</h2>
+        <div class="aciklama">
+            <strong>Amaç:</strong> Sayfaya görsel ve video içerikleri gömmektir[cite: 2].
+        </div>
+        <ul>
+            <li><code>&lt;img src="resim.jpg" alt="Açıklama" width="200"&gt;</code>: Resim ekler. Kapanış etiketi yoktur[cite: 2]. <code>src</code> yolunu, <code>alt</code> görsel yüklenemezse çıkacak yazıyı belirtir[cite: 2].</li>
+            <li><code>&lt;video controls width="300"&gt;...&lt;/video&gt;</code>: Video oynatıcı ekler[cite: 2]. <code>controls</code> oynat/durdur butonlarını aktif eder[cite: 2].</li>
+        </ul>
+        <h3>Örnek Kod:</h3>
+<pre>
+&lt;img src="ornek.jpg" alt="Test Resmi" width="250"&gt;
+
+&lt;video width="320" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Tarayıcınız video etiketini desteklemiyor.
+&lt;/video&gt;
+</pre>
+    </section>
+
+    <footer>
+        <p style="text-align: center;">Pazartesi günkü sınavında başarılar dilerim!</p>
+    </footer>
+
+</body>
+</html>
