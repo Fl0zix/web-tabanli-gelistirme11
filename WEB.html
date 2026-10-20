@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Sınav Çalışma ve Özet Rehberi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        code, pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+        .islev {
+            background: #eaf2f8;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML5 Sınav Çalışma ve Özet Rehberi</h1>
+        <p>Önce Kod, Sonra İşlev - Sınav Öncesi Hızlı Tekrar Sayfası</p>
+    </header>
+
+    <!-- 1 -->
+    <section>
+        <h2>1. DOCTYPE Etiketi</h2>
+        <pre>&lt;!DOCTYPE html&gt;</pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Tarayıcıya bu belgenin en güncel HTML5 standardında yazıldığını bildirir. Sayfanın en başında yer alır.
+        </div>
+    </section>
+
+    <!-- 2 -->
+    <section>
+        <h2>2. HTML Kök Etiketi</h2>
+        <pre>
+&lt;html lang="tr"&gt;
+    &lt;!-- Tüm HTML kodları buraya yazılır --&gt;
+&lt;/html&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Bütün HTML kodlarını kapsayan ana kök etiketidir. İçindeki <code>lang="tr"</code> ifadesi tarayıcıya sayfa dilinin Türkçe olduğunu söyler.
+        </div>
+    </section>
+
+    <!-- 3 -->
+    <section>
+        <h2>3. Head (Başlık ve Ayar) Alanı ve Meta</h2>
+        <pre>
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Sınav Sayfası&lt;/title&gt;
+&lt;/head&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfanın arka plan ayarlarını tutar, ekranda doğrudan görünmez. İçindeki <code>&lt;meta charset="UTF-8"&gt;</code> Türkçe karakterlerin (ş, ç, ğ, ö, ü) düzgün çıkmasını sağlar, <code>&lt;title&gt;</code> ise tarayıcı sekmesinde yazan başlığı belirler.
+        </div>
+    </section>
+
+    <!-- 4 -->
+    <section>
+        <h2>4. Body (Gövde) Alanı</h2>
+        <pre>
+&lt;body&gt;
+    &lt;!-- Kullanıcının ekranda göreceği her şey buraya yazılır --&gt;
+&lt;/body&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Web sitesinin ekranda görünen ana gövdesidir; yazılar, resimler, tablolar buraya eklenir.
+        </div>
+    </section>
+
+    <!-- 5 -->
+    <section>
+        <h2>5. Başlık Etiketleri (&lt;h1&gt; - &lt;h6&gt;)</h2>
+        <pre>
+&lt;h1&gt;Ana Başlık&lt;/h1&gt;
+&lt;h6&gt;En Küçük Başlık&lt;/h6&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Metinlere başlık hiyerarşisi kazandırır. <code>&lt;h1&gt;</code> en büyük ve en önemli başlıktır, <code>&lt;h6&gt;</code> ise en küçük başlıktır.
+        </div>
+    </section>
+
+    <!-- 6 -->
+    <section>
+        <h2>6. Paragraf Etiketi (&lt;p&gt;)</h2>
+        <pre>&lt;p&gt;Bu bir paragraf metnidir.&lt;/p&gt;</pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Metinleri düzenli paragraflar halinde alt alta ayırmak ve blok oluşturmak için kullanılır.
+        </div>
+    </section>
+
+    <!-- 7 -->
+    <section>
+        <h2>7. Kalın ve İtalik Biçimlendirme Etiketleri</h2>
+        <pre>
+&lt;strong&gt;Kalın ve Önemli Metin&lt;/strong&gt;
+&lt;em&gt;Eğik ve Vurgulu Metin&lt;/em&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Yazıyı kalın (<code>&lt;strong&gt;</code> veya <code>&lt;b&gt;</code>) ya da eğik/italik (<code>&lt;em&gt;</code> veya <code>&lt;i&gt;</code>) yapmak için kullanılır. <code>strong</code> ve <code>em</code> ek olarak arama motorlarına "bu metin önemlidir" anlamı katar.
+        </div>
+    </section>
+
+    <!-- 8 -->
+    <section>
+        <h2>8. Üstü ve Altı Çizili Metinler</h2>
+        <pre>
+&lt;del&gt;100 TL&lt;/del&gt; 
+&lt;ins&gt;80 TL&lt;/ins&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> <code>&lt;del&gt;</code> metnin üstünü çizer (eski fiyatlar/silinmiş içerikler için), <code>&lt;ins&gt;</code> ise eklenmiş metin olarak altını çizer.
+        </div>
+    </section>
+
+    <!-- 9 -->
+    <section>
+        <h2>9. Üst ve Alt Simge Etiketleri</h2>
+        <pre>
+X&lt;sup&gt;2&lt;/sup&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Matematiksel üst simgeler (karesi vb. için <code>sup</code>) veya kimyasal formüllerdeki alt simgeler (<code>sub</code>) oluşturmak için kullanılır.
+        </div>
+    </section>
+
+    <!-- 10 -->
+    <section>
+        <h2>10. Listeleme Etiketleri (&lt;ol&gt; ve &lt;ul&gt;)</h2>
+        <pre>
+&lt;ol type="A"&gt;
+    &lt;li&gt;Birinci Madde&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul type="square"&gt;
+    &lt;li&gt;Madde&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Verileri maddeler halinde listelemek içindir. <code>&lt;ol&gt;</code> sıralı (1, 2, 3 veya A, B, C) liste yapar, <code>&lt;ul&gt;</code> ise sırasız (nokta, kare) liste yapar. <code>&lt;li&gt;</code> listenin elemanıdır.
+        </div>
+    </section>
+
+    <!-- 11 -->
+    <section>
+        <h2>11. Tablo Etiketleri (&lt;table&gt;) ve Hücre Birleştirme</h2>
+        <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;Başlık&lt;/th&gt;
+        &lt;td colspan="2"&gt;Veri&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Verileri satır ve sütunlar halinde düzenlemek içindir. <code>&lt;table&gt;</code> tabloyu başlatır, <code>border</code> çerçeve çizgisi verir, <code>&lt;tr&gt;</code> satır, <code>&lt;th&gt;</code> başlık, <code>&lt;td&gt;</code> veri hücresi oluşturur. <code>colspan</code> yan yana sütunları, <code>rowspan</code> alt alta satırları birleştirir.
+        </div>
+    </section>
+
+    <!-- 12 -->
+    <section>
+        <h2>12. Div Etiketi ve Piksel (px) Boyutlandırma</h2>
+        <pre>
+&lt;div style="width: 300px; height: 150px; background-color: blue; padding: 10px;"&gt;
+    Kutunun İçi
+&lt;/div&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfayı kutulamak ve gruplamak için kullanılan boş bir blok kutudur. <code>width</code> genişliği, <code>height</code> yüksekliği, <code>background-color</code> arka plan rengini, <code>padding</code> ise kutunun iç boşluğunu piksel (px) cinsinden ayarlar.
+        </div>
+    </section>
+
+    <!-- 13 -->
+    <section>
+        <h2>13. Medya Etiketleri (Resim ve Video)</h2>
+        <pre>
+&lt;img src="foto.jpg" alt="Açıklama" width="200"&gt;
+
+&lt;video width="320" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfaya görsel veya video eklemek içindir. <code>&lt;img&gt;</code> resim ekler (kapanış etiketi yoktur, <code>src` yolunu belirtir). <code>&lt;video&gt;</code> video ekler, içindeki <code>controls</code> parametresi ise oynat/durdur butonlarının görünmesini sağlar.
+        </div>
+    </section>
+
+    <!-- 14 -->
+    <section>
+        <h2>14. Link (&lt;a&gt;) Etiketi ve Butonları Yan Yana / Alt Alta Dizme</h2>
+        <pre>
+&lt;!-- 1. Sayfalar Arası Geçiş Linki --&gt;
+&lt;a href="hakkimizda.html" target="_blank"&gt;Yeni Sekmede Aç&lt;/a&gt;
+
+&lt;!-- 2. Buton Görünümlü Linkleri Yan Yana Dizmek (Inline Mantığı) --&gt;
+&lt;a href="#" style="padding: 10px 20px; background-color: blue; color: white; text-decoration: none; margin-right: 10px;"&gt;Buton 1&lt;/a&gt;
+&lt;a href="#" style="padding: 10px 20px; background-color: green; color: white; text-decoration: none;"&gt;Buton 2&lt;/a&gt;
+
+&lt;!-- 3. Butonları Üst Üste (Alt Alta) Dizmek (Flex / Blok Mantığı) --&gt;
+&lt;div style="display: flex; flex-direction: column; width: 150px; margin-top: 10px;"&gt;
+    &lt;a href="#" style="padding: 10px; background-color: red; color: white; margin-bottom: 5px; text-align: center; text-decoration: none;"&gt;Üstteki Buton&lt;/a&gt;
+    &lt;a href="#" style="padding: 10px; background-color: orange; color: white; text-align: center; text-decoration: none;"&gt;Alttaki Buton&lt;/a&gt;
+&lt;/div&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> 
+            <code>&lt;a&gt;</code> etiketi başka sayfalara veya sitelere geçiş (link) sağlar. <code>href</code> gidilecek adresi, <code>target="_blank"</code> yeni sekmede açılmasını sağlar. 
+            <code>&lt;a&gt;</code> varsayılan olarak satır içi (inline) olduğundan art arda yazıldığında <strong>yan yana</strong> durur. Eğer bunları alt alta (dikey) dizmek istersek bir <code>&lt;div&gt;</code> içine alıp <code>display: flex; flex-direction: column;</code> veririz.
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; color: #7f8c8d;">Pazartesi günkü sınavında başarılar dilerim!</p>
+    </footer>
+
+</body>
+</html>
