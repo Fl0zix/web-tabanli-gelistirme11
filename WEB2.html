@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Sınav Çalışma ve Özet Rehberi (Gelişmiş)</title>
+    <style>
+        /* === GENEL SAYFA AYARLARI === */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        code, pre {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+        .islev {
+            background: #eaf2f8;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* === SINAV KURTARICI CSS'LER === */
+        #sinav-kapsayici {
+            width: 900px;
+            margin: 0 auto; /* Sayfayı ortalar */
+            background-color: #fff;
+            padding: 20px;
+            border: 2px dashed #e74c3c;
+        }
+
+        #yatay-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #34495e;
+            overflow: hidden;
+        }
+        #yatay-menu li {
+            float: left; /* Yan yana dizme */
+        }
+        #yatay-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        #yatay-menu li a:hover {
+            background-color: #1abc9c;
+        }
+
+        .form-grubu {
+            margin-bottom: 15px;
+        }
+        .form-grubu label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-grubu input[type="text"], 
+        .form-grubu input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Padding'in genişliği bozmasını engeller */
+        }
+        .btn-gonder {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML5 Sınav Çalışma ve Özet Rehberi</h1>
+        <p>Önce Kod, Sonra İşlev - Sınav Öncesi Hızlı Tekrar Sayfası</p>
+    </header>
+
+    <!-- SINAVDA EN ÇOK ÇIKAN TASARIM KODLARI -->
+    <section style="border: 2px solid #e74c3c;">
+        <h2 style="color: #e74c3c;">⭐ SINAVDA DİREKT KULLANABİLECEĞİN ŞABLONLAR</h2>
+        
+        <h3>A. Dış CSS Bağlama ve ID Kullanımı</h3>
+        <p>Hoca "CSS'i ayrı dosyaya yaz ve ID ile çağır" derse, head etiketinin içine şunu yazacaksın: <br>
+        <code>&lt;link rel="stylesheet" href="stil.css"&gt;</code></p>
+        <p>HTML'de kutu oluştururken: <code>&lt;div id="kapsayici"&gt;...&lt;/div&gt;</code><br>
+        CSS dosyasında ise: <code>#kapsayici { width: 800px; margin: 0 auto; }</code></p>
+
+        <hr>
+
+        <h3>B. Yatay Menü (Navbar) Yapımı</h3>
+        <pre>
+&lt;ul id="yatay-menu"&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Anasayfa&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="hakkimizda.html"&gt;Hakkımızda&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="iletisim.html"&gt;İletişim&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+        <div class="islev">
+            <strong>CSS Mantığı:</strong> <code>ul</code> etiketine <code>list-style-type: none;</code> verip noktaları kaldırırsın. <code>li</code> etiketlerine <code>float: left;</code> vererek yan yana dizersin. Linklerin alt çizgisini <code>text-decoration: none;</code> ile kaldırırsın.
+        </div>
+
+        <hr>
+
+        <h3>C. Form ve Input Elemanları</h3>
+        <pre>
+&lt;div class="form-grubu"&gt;
+    &lt;label&gt;Adınız:&lt;/label&gt;
+    &lt;input type="text" placeholder="Adınızı girin"&gt;
+&lt;/div&gt;
+&lt;div class="form-grubu"&gt;
+    &lt;label&gt;E-posta:&lt;/label&gt;
+    &lt;input type="email" placeholder="E-posta girin"&gt;
+&lt;/div&gt;
+&lt;button class="btn-gonder"&gt;Gönder&lt;/button&gt;
+        </pre>
+        <div class="islev">
+            <strong>CSS Mantığı:</strong> <code>input</code> elemanlarına <code>width: 100%; padding: 8px; box-sizing: border-box;</code> verirsen form çok şık durur. <code>box-sizing: border-box;</code> padding'in genişliği taşırmasını engeller.
+        </div>
+
+        <hr>
+
+        <h3>D. İç İçe Div Yapısı (Nested Div Layout)</h3>
+        <pre>
+&lt;!-- HTML --&gt;
+&lt;div id="ana-kapsayici"&gt;
+    &lt;div id="ust-kutu"&gt;Üst İçerik&lt;/div&gt;
+    &lt;div id="orta-kutu"&gt;Orta İçerik&lt;/div&gt;
+    &lt;div id="alt-kutu"&gt;Alt İçerik&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+#ana-kapsayici { width: 800px; margin: 0 auto; background: #fff; padding: 20px; }
+#ust-kutu { background: #3498db; margin-bottom: 15px; padding: 15px; }
+#orta-kutu { background: #ecf0f1; margin-bottom: 15px; padding: 15px; }
+#alt-kutu { background: #95a5a6; padding: 15px; }
+        </pre>
+        <div class="islev">
+            <strong>CSS Mantığı:</strong> Dış kutuya <code>margin: 0 auto;</code> verilerek sayfanın ortasına hizalanır. İçteki kutuların birbiri üzerine yapışmaması için <code>margin-bottom</code> kullanılır (`padding-bottom` kutu içini büyütür, dış boşluk bırakmaz!).
+        </div>
+    </section>
+
+    <!-- 1 -->
+    <section>
+        <h2>1. DOCTYPE Etiketi</h2>
+        <pre>&lt;!DOCTYPE html&gt;</pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Tarayıcıya bu belgenin en güncel HTML5 standardında yazıldığını bildirir. Sayfanın en başında yer alır.
+        </div>
+    </section>
+
+    <!-- 2 -->
+    <section>
+        <h2>2. HTML Kök Etiketi</h2>
+        <pre>
+&lt;html lang="tr"&gt;
+    &lt;!-- Tüm HTML kodları buraya yazılır --&gt;
+&lt;/html&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Bütün HTML kodlarını kapsayan ana kök etiketidir. İçindeki <code>lang="tr"</code> ifadesi tarayıcıya sayfa dilinin Türkçe olduğunu söyler.
+        </div>
+    </section>
+
+    <!-- 3 -->
+    <section>
+        <h2>3. Head (Başlık ve Ayar) Alanı ve Meta</h2>
+        <pre>
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Sınav Sayfası&lt;/title&gt;
+    &lt;link rel="stylesheet" href="stil.css"&gt; &lt;!-- DIŞ CSS BAĞLAMA --&gt;
+&lt;/head&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfanın arka plan ayarlarını tutar, ekranda doğrudan görünmez. İçindeki <code>&lt;meta charset="UTF-8"&gt;</code> Türkçe karakterlerin düzgün çıkmasını sağlar. <code>&lt;link&gt;</code> etiketi ile dış CSS dosyası bağlanır.
+        </div>
+    </section>
+
+    <!-- 4 -->
+    <section>
+        <h2>4. Body (Gövde) Alanı</h2>
+        <pre>
+&lt;body&gt;
+    &lt;!-- Kullanıcının ekranda göreceği her şey buraya yazılır --&gt;
+&lt;/body&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Web sitesinin ekranda görünen ana gövdesidir; yazılar, resimler, tablolar buraya eklenir.
+        </div>
+    </section>
+
+    <!-- 5 -->
+    <section>
+        <h2>5. Başlık Etiketleri (&lt;h1&gt; - &lt;h6&gt;)</h2>
+        <pre>
+&lt;h1&gt;Ana Başlık&lt;/h1&gt;
+&lt;h6&gt;En Küçük Başlık&lt;/h6&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Metinlere başlık hiyerarşisi kazandırır. <code>&lt;h1&gt;</code> en büyük ve en önemli başlıktır, <code>&lt;h6&gt;</code> ise en küçük başlıktır.
+        </div>
+    </section>
+
+    <!-- 6 -->
+    <section>
+        <h2>6. Paragraf Etiketi (&lt;p&gt;)</h2>
+        <pre>&lt;p&gt;Bu bir paragraf metnidir.&lt;/p&gt;</pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Metinleri düzenli paragraflar halinde alt alta ayırmak ve blok oluşturmak için kullanılır.
+        </div>
+    </section>
+
+    <!-- 7 -->
+    <section>
+        <h2>7. Kalın ve İtalik Biçimlendirme Etiketleri</h2>
+        <pre>
+&lt;strong&gt;Kalın ve Önemli Metin&lt;/strong&gt;
+&lt;em&gt;Eğik ve Vurgulu Metin&lt;/em&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Yazıyı kalın (<code>&lt;strong&gt;</code> veya <code>&lt;b&gt;</code>) ya da eğik/italik (<code>&lt;em&gt;</code> veya <code>&lt;i&gt;</code>) yapmak için kullanılır.
+        </div>
+    </section>
+
+    <!-- 8 -->
+    <section>
+        <h2>8. Üstü ve Altı Çizili Metinler</h2>
+        <pre>
+&lt;del&gt;100 TL&lt;/del&gt; 
+&lt;ins&gt;80 TL&lt;/ins&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> <code>&lt;del&gt;</code> metnin üstünü çizer, <code>&lt;ins&gt;</code> ise eklenmiş metin olarak altını çizer.
+        </div>
+    </section>
+
+    <!-- 9 -->
+    <section>
+        <h2>9. Üst ve Alt Simge Etiketleri</h2>
+        <pre>
+X&lt;sup&gt;2&lt;/sup&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Matematiksel üst simgeler (<code>sup</code>) veya kimyasal formüllerdeki alt simgeler (<code>sub</code>) oluşturmak için kullanılır.
+        </div>
+    </section>
+
+    <!-- 10 -->
+    <section>
+        <h2>10. Listeleme Etiketleri (&lt;ol&gt;, &lt;ul&gt;, &lt;dl&gt;)</h2>
+        <pre>
+&lt;ol type="A"&gt;
+    &lt;li&gt;Birinci Madde&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul type="square"&gt;
+    &lt;li&gt;Madde&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Web dili başlığı&lt;/dd&gt;
+&lt;/dl&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Verileri maddeler halinde listelemek içindir. <code>&lt;ol&gt;</code> sıralı liste yapar, <code>&lt;ul&gt;</code> sırasız liste yapar, <code>&lt;dl&gt;</code> ise terim-açıklama (tanım) listesi yapar.
+        </div>
+    </section>
+
+    <!-- 11 -->
+    <section>
+        <h2>11. Tablo Etiketleri (&lt;table&gt;) ve Hücre Birleştirme</h2>
+        <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th rowspan="2"&gt;Başlık&lt;/th&gt;
+        &lt;td colspan="2"&gt;Veri&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Verileri satır ve sütunlar halinde düzenlemek içindir. <code>colspan</code> yan yana sütunları, <code>rowspan</code> alt alta satırları birleştirir. Sınavda CSS ile <code>border-collapse: collapse;</code> yazmayı unutma!
+        </div>
+    </section>
+
+    <!-- 12 -->
+    <section>
+        <h2>12. Div Etiketi ve Kutu Modeli (Margin - Padding)</h2>
+        <pre>
+&lt;div id="kapsayici"&gt;
+    Kutunun İçi
+&lt;/div&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfayı kutulamak ve gruplamak için kullanılan boş blok kutudur. 
+            <br> <b>width:</b> Genişlik.
+            <br> <b>height:</b> Yükseklik.
+            <br> <b>padding:</b> İç boşluk (Yazının kutu kenarına uzaklığı).
+            <br> <b>margin:</b> Dış boşluk (Kutunun diğer kutulara uzaklığı).
+            <br> <b>margin: 0 auto;</b> Kutuyu sayfanın tam ortasına yerleştirir.
+        </div>
+    </section>
+
+    <!-- 13 -->
+    <section>
+        <h2>13. Medya Etiketleri (Resim ve Video)</h2>
+        <pre>
+&lt;img src="foto.jpg" alt="Açıklama" width="200"&gt;
+
+&lt;video width="320" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sayfaya görsel veya video eklemek içindir. <code>&lt;img&gt;</code> resim ekler (kapanış etiketi yoktur). <code>&lt;video&gt;</code> içindeki <code>controls</code> parametresi oynat/durdur butonlarını gösterir.
+        </div>
+    </section>
+
+    <!-- 14 -->
+    <section>
+        <h2>14. Link (&lt;a&gt;) Etiketi ve Butonlar</h2>
+        <pre>
+&lt;!-- Sayfalar Arası Geçiş Linki --&gt;
+&lt;a href="hakkimizda.html" target="_blank"&gt;Yeni Sekmede Aç&lt;/a&gt;
+
+&lt;!-- Buton Görünümlü Link --&gt;
+&lt;a href="#" style="padding: 10px 20px; background-color: blue; color: white; text-decoration: none;"&gt;Buton 1&lt;/a&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> <code>&lt;a&gt;</code> etiketi başka sayfalara geçiş sağlar. <code>href</code> gidilecek adresi, <code>target="_blank"</code> yeni sekmede açılmasını sağlar. Linki buton gibi yapmak için <code>padding</code> ve <code>background-color</code> verilir, <code>text-decoration: none;</code> ile alt çizgi kaldırılır.
+        </div>
+    </section>
+
+    <!-- 15 -->
+    <section>
+        <h2>15. ID (#) ve Class (.) Seçicileri Arasındaki Fark</h2>
+        <pre>
+/* ID: Sayfada SADECE 1 KEZ kullanılır */
+#ana-kapsayici { width: 800px; }
+
+/* Class: Sayfada BİRDEN FAZLA elemana verilebilir */
+.kutu-tasarim { border: 1px solid #ccc; }
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> <code>id</code> benzersiz nesneler içindir ve `#` ile çağrılır. <code>class</code> tekrar eden nesneler içindir ve `.` ile çağrılır. Sınavda hocalar genelde `id` kullanılması şartını koşar.
+        </div>
+    </section>
+
+    <!-- 16 -->
+    <section>
+        <h2>16. HTML5 Anlamsal (Semantic) Etiketler</h2>
+        <pre>
+&lt;header&gt;Üst Başlık ve Logo Alanı&lt;/header&gt;
+&lt;nav&gt;Menü Bağlantıları&lt;/nav&gt;
+&lt;main&gt;Ana İçerik Alanı&lt;/main&gt;
+&lt;section&gt;İçerik Bölümü&lt;/section&gt;
+&lt;aside&gt;Yan Menü / Yan Panel&lt;/aside&gt;
+&lt;footer&gt;Alt Bilgi ve Telif Alanı&lt;/footer&gt;
+        </pre>
+        <div class="islev">
+            <strong>İşlevi / Ne Amaçla Kullanılır:</strong> Sadece düz <code>div</code> kullanmak yerine arama motorlarının ve tarayıcıların sayfa yapısını daha iyi anlamasını sağlayan anlamsal yapı etiketleridir.
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; color: #7f8c8d; margin-top: 40px;">Sınavda Başarılar! Bu sayfadaki şablonları aklında tut, gerisi çorap söküğü gibi gelecek. 💪</p>
+    </footer>
+
+</body>
+</html>
